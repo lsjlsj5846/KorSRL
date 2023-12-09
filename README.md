@@ -7,7 +7,9 @@ This is a package of 2023-2 SNU NLP final project from team 6: enhancing korean 
 * TensorFlow 1.13.1
 
 ### Code structure
+TBD
 ### Data description
+TBD
 ### How to use
 To reproduce the experiments, please run:
 ```
