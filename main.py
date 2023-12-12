@@ -30,7 +30,7 @@ def parse_args():
 	flags.DEFINE_string("optimizer",	"adam",		"Optimizer for training")
 	flags.DEFINE_boolean("lower",		True,		"Wither lower case")
 	flags.DEFINE_integer("batch_size",	20,			"batch size")
-	flags.DEFINE_integer("patience",	10,			"Patience for the validation-based early stopping")
+	flags.DEFINE_integer("patience",	5,			"Patience for the validation-based early stopping")
 
 	flags.DEFINE_integer("max_epoch",	10,		"maximum training epochs")
 	flags.DEFINE_integer("steps_check", 100,		"steps per checkpoint")

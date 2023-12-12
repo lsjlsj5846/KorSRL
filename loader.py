@@ -41,24 +41,22 @@ def prepare_dataset(dataset, char_to_id, tag_to_id, train=True, num_shuffle=0):
 	"""
 	data = []
 	if train and num_shuffle != 0:
-		for i in range(2):
-			for sen in dataset:
-				words = sen[1]
-				chars = [[char_to_id[c if c in char_to_id else '<UNK>']
-						for c in word] for word in sen[1]]
-				tag_ids = [tag_to_id[l] for l in sen[2]]
-			
-				if i < 1:
+		for sen in dataset:
+			words = sen[1]
+			chars = [[char_to_id[c if c in char_to_id else '<UNK>']
+					for c in word] for word in sen[1]]
+			tag_ids = [tag_to_id[l] for l in sen[2]]
+			for i in range(2):
+				if i >= 1:
 					combined = list(zip(words, chars, tag_ids))
 					for j in range(num_shuffle):
-						first = random.randint(0, len(combined)-1)
-						second = random.randint(0, len(combined)-1)
+						first = random.randint(0, len(words)-1)
+						second = random.randint(0, len(words)-1)
 						while first == second:
-							second = random.randint(0, len(combined)-1)
+							second = random.randint(0, len(words)-1)
 						temp = combined[first]
 						combined[first] = combined[second]
 						combined[second] = temp
-					# combined = combined[-1::-1]
 					shuffled_words, shuffled_chars, shuffled_tag_ids = zip(*combined)
 					shuffled_element = [list(shuffled_words), list(shuffled_chars), list(shuffled_tag_ids)]
 					data.append(shuffled_element)
@@ -71,38 +69,3 @@ def prepare_dataset(dataset, char_to_id, tag_to_id, train=True, num_shuffle=0):
 			tag_ids = [tag_to_id[l] for l in sen[2]]
 			data.append([words, chars, tag_ids])
 	return data
-
-# def prepare_dataset(dataset, char_to_id, tag_to_id, dev=False, num_shuffle=0):
-# 	"""
-# 	데이터셋 전처리를 수행한다.
-# 	return : list of list of dictionary
-# 	dictionry
-# 		- word indices
-# 		- word char indices
-# 		- tag indices
-# 	"""
-# 	data = []
-# 	for sen in dataset:
-# 		words = sen[1]
-# 		chars = [[char_to_id[c if c in char_to_id else '<UNK>'] for c in word] for word in sen[1]]
-# 		tag_ids = [tag_to_id[l] for l in sen[2]]
-
-# 		# original data
-# 		data.append([words, chars, tag_ids])
-
-# 		if not dev and num_shuffle != 0:
-# 			# shuffled data
-# 			combined = list(zip(words, chars, tag_ids))
-# 			for _ in range(num_shuffle):
-# 				first = random.randint(0, len(combined)-1)
-# 				second = random.randint(0, len(combined)-1)
-# 				while first == second:
-# 					second = random.randint(0, len(combined)-1)
-# 				temp = combined[first]
-# 				combined[first] = combined[second]
-# 				combined[second] = temp
-# 			shuffled_words, shuffled_chars, shuffled_tag_ids = zip(*combined)
-# 			shuffled_element = [list(shuffled_words), list(shuffled_chars), list(shuffled_tag_ids)]
-# 			data.append(shuffled_element)
-
-# 	return data
