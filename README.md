@@ -7,7 +7,7 @@ This is a package of 2023-2 SNU NLP final project from team 6: enhancing korean 
 * TensorFlow 1.13.1
 
 ### Data description
-* 의미역 결정(SRL) ([link])(https://air.changwon.ac.kr/?page_id=14)
+* 의미역 결정(SRL) ([link](https://air.changwon.ac.kr/?page_id=14))
 
 ### How to use
 To reproduce the experiments, please run:
