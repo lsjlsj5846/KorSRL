@@ -17,4 +17,4 @@ $ bash main.sh
 ```
 
 ## Reference
-* 네이버, 창원대가 함께하는 NLP Challenge ([link: https://github.com/naver/nlp-challenge])
+* 네이버, 창원대가 함께하는 NLP Challenge ([link](https://github.com/naver/nlp-challenge))
