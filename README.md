@@ -1,6 +1,10 @@
 # 2023-2 SNU NLP Final Team Project
 This is a package of 2023-2 SNU NLP final project from team 6: enhancing korean SRL with data augmentation.
 
+![image](https://github.com/lsjlsj5846/KorSRL/assets/120196745/04820f9e-6006-4340-8325-b06508c9b594)
+![image](https://github.com/lsjlsj5846/KorSRL/assets/120196745/34fd5dd2-ed94-4f9e-85ac-6adcd0249c3d)
+
+
 ## Package Information
 ### Environment
 * Python 3.5
